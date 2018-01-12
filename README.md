@@ -8,7 +8,7 @@
 
 作为国内专业的A/B 测试云服务，AppAdhoc A/B Testing适用于从前端优化（包括Web/H5，iOS，Android）到后端流程优化（包括功能测试、推荐算法优化等），还可以根据实际情况灵活配置（包括Java，Node.js，Python语言和Restful API接口等），满足您全方位的优化需求。
 
-![](/assets/import.png)
+
 
 此外，AppAdhoc A/B Testing提供多个模式支持不同特征的试验需求，分别是可视化模式、编程模式、多链接合并模式。
 
