@@ -1,0 +1,100 @@
+## iOS编程试验过程 {#androidios编程试验过程}
+
+在这部分中，我们将以优化页面上的一个标题的文案，预期提升转化为例，来说明如何使用编程模式试验。先通过一张简单的流程图了解所需的步骤，再一步步进行具体操作： ![](http://doc.appadhoc.com/_images/design/codingflow.png "具体操作")
+
+### 1 试验方案 {#1-试验方案}
+
+一个完整的A/B 测试需要根据目前已有的用户数据进行分析判断，推断并建立假设，才能针对性的做出改变和调整，**根据具体需求，构建产品A/B 测试的需求文档，即明确本次试验的几个要素。**
+
+在本次示例中，设计试验版本为新的注册按钮文案"抢先体验"，对照组为原始的文案"注册"，优化指标为按钮的点击次数。
+
+### 2 新建试验 {#new}
+
+在试验开始前，请确保已经正确集成SDK。详情参考SDK集成文档[iOS](http://doc.appadhoc.com/sdk/iosSDK.html)。
+
+进入您的应用界面，此处示例为\[AppAdhoc移动端DEMO\]，选择 **新建试验**。 ![](http://doc.appadhoc.com/_images/expsetting/create_appcoding.png "具体操作")
+
+为了方便寻找，可以将此次测试的内容设置为试验名称。
+
+选择分层：您可以为每一个新创建的试验设置所在层，在同一层的试验流量互斥，可以保证试验互不干扰。如果两个试验在不同层，那么流量可能会重叠，同一个用户可能会同时进入不同层的多个试验。如果选择分层，请自行确保试验内容互不干扰。详情参考[分层流量](http://doc.appadhoc.com/expFlow/stratifiedFlow.html)。
+
+### 3 试验版本 {#ver}
+
+点击创建，开始编辑试验版本。系统默认生成原始版本和一个试验版本。您需要先创建 **试验变量** ，来控制试验中将要对比展示的内容。
+
+* 在此次示例试验中， 要对比的元素为不同文案，因此创建变量名称titleText。请注意变量名称将要集成在代码中，请以英文开头命名，可以使用数字或下划线。
+* 变量类型选择String，可以编辑任意字符串。如果是数字或开关，可以选择对应的类型Number或Boolean。
+* 默认值需要填写原本页面的内容，本次示例为“注册”。在试验运行后，如果访客因为网络原因无法及时获取试验数据，页面将会按照默认值展示。
+
+![](http://doc.appadhoc.com/_images/expsetting/create_flag.png "具体操作")
+
+变量创建后，需要在试验版本中填写对应的值，在此示例中，试验版本的文案为“抢先体验”。  
+如果您有更多方案，可以继续添加试验版本，在每个版本中填写对应的值即可。
+
+请注意在用户访问到试验页面时，需要触发所有变量才算作进入试验，否则将不会上报试验数据。请提醒开发人员注意此处集成方式。
+
+**变量创见完成，需要在代码中集成，** 请参考SDK集成文档[iOS](http://doc.appadhoc.com/sdk/iosSDK.html#flag)。请确保变量名称与代码中一致。
+
+以本次案例为例，代码集成后，页面预览效果为 ![](http://doc.appadhoc.com/_images/debug/page.png "具体操作")
+
+### 4 优化指标 {#stat}
+
+接下来进行「优化指标」设置（点击了解[如何选取优化指标](http://doc.appadhoc.com/dataDecision/select.html)），这里为「BtnClick」。同样，将优化指标设置完成后，需要对其进行代码集成。若在试验开始运行前，有指标增减的情况，应及时将代码同步。[集成说明](http://doc.appadhoc.com/sdk/htmlSDK.html#stat)。
+
+![](http://doc.appadhoc.com/_images/expsetting/create_stat.png "具体操作")
+
+本次示例中，所设置的优化指标代码为
+
+[Objectice-C](javascript:;)
+
+\|
+
+[Swift](javascript:;)
+
+```
+- (IBAction)btnClicked:(id)sender {
+    [AdhocSDK track:@"clickTimes" value:@(1)];
+}
+```
+
+有关复合指标的说明请参考[此处](http://doc.appadhoc.com/expFlow/stat.html#comstat)。
+
+### 5 集成调试 {#debug}
+
+确认试验版本和优化指标内容无误，点击完成创建，将会跳转到集成调试界面，可以在此界面预览集成效果。
+
+iOS设备可启用调试代码，在调试设备下打开您的APP，点击界面中的悬浮按钮即可扫码加入版本。调试代码如下：
+
+[Objective-C](javascript:;)
+
+\|
+
+[Swift](javascript:;)
+
+在SDK启动时设置是否显示调试按钮
+
+```
+AdhocSDKConfig *config = [AdhocSDKConfig defaultConfig];
+
+    config.debugAssistiveShow = YES;
+
+[AdhocSDK startWithConfigure:config options:launchOptions];
+```
+
+![](http://doc.appadhoc.com/_images/debug/scan.png "使用步骤") 操作后，也会获取到对应的指标数据，可以在此界面中预览。调试数据不会影响到真实试验数据。  
+![](http://doc.appadhoc.com/_images/debug/data.png "使用步骤")
+
+**请注意，扫码加入版本后，设备将会停留在对应的调试版本。如果想要恢复设备正常加入试验，在扫码界面选择退出版本即可。**
+
+### 6 调整流量 {#flow}
+
+点击完成调试，将会跳转到运行控制界面。在此界面中您可以调整试验流量、运行或结束试验。
+
+请为此次试验分配流量，访问到链接的用户将会按照您设定的百分比看到所展现的页面。未参与到试验中的用户将会看到原始页面，并且不会上报数据。  
+即使是试验开始运行后，也可以调整流量，所做的调整将会及时生效。  
+**请注意100%的流量不代表所有用户都会参与试验，以及在同一层中，某试验占用的流量不能再被分配到其他试验中**。 有关流量的详细说明请参考[流量分配](http://doc.appadhoc.com/expFlow/stratifiedFlow.html)。 ![](http://doc.appadhoc.com/_images/expsetting/flow.png "使用步骤")
+
+### 7 运行试验 {#7-运行试验}
+
+恭喜！现在可以开始运行您的A/BTesting方案了，记得关注试验数据，以便及时调整流量，做出应对策略。有关数据分析请参考[此处](http://doc.appadhoc.com/runAnalysis)。
+
