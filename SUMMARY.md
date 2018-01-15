@@ -45,4 +45,5 @@
   * [购物流程优化试验](web-sdkji-cheng-wen-dang/gou-wu-liu-cheng-you-hua-shi-yan.md)
   * [落地页对比试验](web-sdkji-cheng-wen-dang/luo-di-ye-dui-bi-shi-yan.md)
   * [首页大改版试验](web-sdkji-cheng-wen-dang/shou-ye-da-gai-ban-shi-yan.md)
+  * [推荐算法优化试验](web-sdkji-cheng-wen-dang/tui-jian-suan-fa-you-hua-shi-yan.md)
 
