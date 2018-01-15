@@ -41,5 +41,6 @@
     * [集成调试](jie-ru-sdk/ios-sdk-ji-cheng-wen-dang/ji-cheng-diao-shi.md)
     * [定向试验](jie-ru-sdk/ios-sdk-ji-cheng-wen-dang/shou-zhong-ding-xiang.md)
     * [iOS/H5混编调用SDK](jie-ru-sdk/ios-sdk-ji-cheng-wen-dang/iosh5hun-bian-diao-yong-sdk.md)
-* [Web SDK集成文档](web-sdkji-cheng-wen-dang.md)
+* [5.试验案例](web-sdkji-cheng-wen-dang.md)
+  * [购物流程优化试验](web-sdkji-cheng-wen-dang/gou-wu-liu-cheng-you-hua-shi-yan.md)
 
