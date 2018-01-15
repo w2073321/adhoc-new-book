@@ -43,17 +43,17 @@
 在用户进入首页时，通过Get\_flags获取变量值，由此来决定用户看到新功能的首页还是旧功能的首页，通过分支结构让用户进入不同的首页，从而进入不同的功能流程。
 
 ```
-AdhocSDK.getFlag\("is\_new\_function", default: false\).boolValue
+AdhocSDK.getFlag("is_new_function", default: false).boolValue
 
 
 
-override func viewWillAppear\(animated: Bool\) {
+override func viewWillAppear(animated: Bool) {
 
-      super.viewWillAppear\(animated\)
+      super.viewWillAppear(animated)
 
-          //获取Boolean类型的试验变量is\_new\_function的值
+          //获取Boolean类型的试验变量is_new_function的值
 
-      let isNewFunction = AdhocSDK.getFlag\("is\_new\_function",         default: false\).boolValue
+      let isNewFunction = AdhocSDK.getFlag("is_new_function",         default: false).boolValue
 
       if isNewHomePage == true {
 
@@ -75,7 +75,7 @@ override func viewWillAppear\(animated: Bool\) {
 （在初始化代码中）
 
 ```
- config.customProperty = \[“district”: Beijing\]
+ config.customProperty = [“district”: Beijing]
 ```
 
 * ##### 指标上报
@@ -83,9 +83,9 @@ override func viewWillAppear\(animated: Bool\) {
 在用户点击功能模块时上报指标function\_click
 
 ```
-func btnClicked\(btn: UIButton\) {
+func btnClicked(btn: UIButton) {
 
-    AdhocSDK.track\("clickTimes", value: 1\)
+    AdhocSDK.track("clickTimes", value: 1)
 
 }
 ```
@@ -112,17 +112,7 @@ func btnClicked\(btn: UIButton\) {
 
 一旦在某一个节点发生问题，如后台服务器压力过高，则停止流量调节，保持在原地，根据是否可以快速解决问题决定是否继续灰度发布；如客户反馈bug增多，则应当迅速回滚（新功能版本流量调节至0），减少损失。
 
-
-
 ## 
-
-
-
-
-
-
-
-
 
 ### 
 
