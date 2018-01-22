@@ -43,9 +43,9 @@
     * [iOS/H5混编调用SDK](jie-ru-sdk/ios-sdk-ji-cheng-wen-dang/iosh5hun-bian-diao-yong-sdk.md)
 * [5.试验案例](web-sdkji-cheng-wen-dang.md)
   * [购物流程优化试验](web-sdkji-cheng-wen-dang/gou-wu-liu-cheng-you-hua-shi-yan.md)
-  * [落地页对比试验](web-sdkji-cheng-wen-dang/luo-di-ye-dui-bi-shi-yan.md)
   * [首页大改版试验](web-sdkji-cheng-wen-dang/shou-ye-da-gai-ban-shi-yan.md)
   * [推荐算法优化试验](web-sdkji-cheng-wen-dang/tui-jian-suan-fa-you-hua-shi-yan.md)
   * [APP功能迭代试验](web-sdkji-cheng-wen-dang/appgong-neng-die-dai-shi-yan.md)
   * [App灰度发布试验](web-sdkji-cheng-wen-dang/apphui-du-fa-bu-shi-yan.md)
+* [落地页对比试验](luo-di-ye-dui-bi-shi-yan.md)
 
