@@ -48,4 +48,8 @@
   * [APP功能迭代试验](web-sdkji-cheng-wen-dang/appgong-neng-die-dai-shi-yan.md)
   * [App灰度发布试验](web-sdkji-cheng-wen-dang/apphui-du-fa-bu-shi-yan.md)
   * [落地页对比试验](luo-di-ye-dui-bi-shi-yan.md)
+* [6.数据验证](6shu-ju-yan-zheng.md)
+  * [集成调试](6shu-ju-yan-zheng/ji-cheng-diao-shi.md)
+  * [功能测试](6shu-ju-yan-zheng/gong-neng-ce-shi.md)
+  * 问题排查
 
