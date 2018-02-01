@@ -54,4 +54,6 @@
   * 问题排查
 * [7.API接口](7apijie-kou.md)
   * [groups参数说明](7apijie-kou/groupscan-shu-shuo-ming.md)
+  * [Control参数说明](7apijie-kou/control.md)
+  * [Experiments参数说明](7apijie-kou/experimentscan-shu-shuo-ming.md)
 
