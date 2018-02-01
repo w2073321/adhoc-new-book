@@ -52,4 +52,6 @@
   * [集成调试](6shu-ju-yan-zheng/ji-cheng-diao-shi.md)
   * [功能测试](6shu-ju-yan-zheng/gong-neng-ce-shi.md)
   * 问题排查
+* [7.API接口](7apijie-kou.md)
+  * [groups参数说明](7apijie-kou/groupscan-shu-shuo-ming.md)
 
