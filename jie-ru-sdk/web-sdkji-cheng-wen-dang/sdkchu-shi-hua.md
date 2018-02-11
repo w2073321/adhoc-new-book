@@ -4,28 +4,16 @@
 
 ```
 ……
-<
-head
->
-<
-script src='https://sdk.appadhoc.com/ab.plus.js'
->
-<
-/script
->
-<
-script
->
+<head>
+<script src='https://sdk.appadhoc.com/ab.plus.js'>
+</script>
+<script>
         adhoc('init', {
             appKey: 'your app key',
             defaultFlags: {isNewHomePage: false} //仅用于编程模式：设置试验变量默认值（获取试验变量失败时使用）
         })
-<
-/script
->
-<
-/head
->
+</script>
+</head>
 ……
 ```
 
