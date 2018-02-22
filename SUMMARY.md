@@ -11,7 +11,7 @@
     * [Web可视化模式](4webshi-yan/webke-shi-hua-mo-shi.md)
     * [Web编程模式](4webshi-yan/webbian-cheng-mo-shi.md)
     * [Web多链接合并模式](4webshi-yan/webduo-lian-jie-he-bing-mo-shi.md)
-    * [LOP模式](4webshi-yan/lopmo-shi.md)
+    * [LPO模式](4webshi-yan/lopmo-shi.md)
   * [Android试验](androidshi-yan.md)
     * [Android可视化模式](androidshi-yan/androidke-shi-hua-mo-shi.md)
     * [Android编程模式](androidshi-yan/androidbian-cheng-mo-shi.md)
