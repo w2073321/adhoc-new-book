@@ -1,10 +1,9 @@
-# react-native-ios
+# React-native-ios/Android
 
 ## 安装
 
 ```
 npm install react-native-adhoc --save
-
 ```
 
 ## 配置
@@ -13,7 +12,6 @@ npm install react-native-adhoc --save
 
 ```
 react-native link
-
 ```
 
 ### iOS SDK 初始化
@@ -29,8 +27,26 @@ AdhocSDKConfig *config = [AdhocSDKConfig defaultConfig];
 config.appKey = @“ADHOC_xxx”;
 config.debugAssistiveShow = YES;
 [AdhocSDK startWithConfigure:config options:launchOptions];
+```
+
+### Android SDK 初始化
+
+在Application的onCreate方法中初始化原生SDK
 
 ```
+AdhocConfig adhocConfig = new AdhocConfig.Builder()
+        //设置App上下文(必要参数)
+        .context(this)
+        //设置Appkey(必要参数)
+        .appKey(key)
+        //全部配置参考官网
+        .build();
+
+AdhocTracker.init(adhocConfig);
+
+```
+
+## SDK
 
 所有的 API 都能在 [react-native-adhoc/index.js](https://github.com/AppAdhoc/react-native-adhoc/blob/master/index.js) 中查到。
 
@@ -38,7 +54,6 @@ config.debugAssistiveShow = YES;
 
 ```
 import  AdhocSDK  from 'react-native-adhoc'
-
 ```
 
 #### API
@@ -53,7 +68,6 @@ import  AdhocSDK  from 'react-native-adhoc'
    {
 
   });
-
   ```
 
 * track\(String, Number\)
@@ -62,7 +76,6 @@ import  AdhocSDK  from 'react-native-adhoc'
 
   ```
   AdhocSDK.track('stat_nameXXX', 7);
-
   ```
 
 * trackWithAttribute\(String, Number, Dictionary\)
@@ -71,7 +84,6 @@ import  AdhocSDK  from 'react-native-adhoc'
 
   ```
   AdhocSDK.trackWithAttribute('stat_nameXXX', 7, {name: 'Tom', age: 18});
-
   ```
 
 * trackPageView\(\)
@@ -80,7 +92,6 @@ import  AdhocSDK  from 'react-native-adhoc'
 
   ```
   AdhocSDK.trackPageView();
-
   ```
 
 * getCurrentExperiments\(Function\)
@@ -93,7 +104,6 @@ import  AdhocSDK  from 'react-native-adhoc'
    {
 
   });
-
   ```
 
 * getCurrentExperimentsAndExperimentsID\(Function\)
@@ -106,7 +116,6 @@ import  AdhocSDK  from 'react-native-adhoc'
    {
 
   });
-
   ```
 
 * asynchronousGetFlag\(String, Any, Number, Function\)
@@ -119,7 +128,6 @@ import  AdhocSDK  from 'react-native-adhoc'
    {
 
   });
-
   ```
 
 * handleWebViewMessage\(Object, String\)
